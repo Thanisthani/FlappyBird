@@ -43,6 +43,9 @@ initPos(){
 
     this.topPipe.setPosition(this.tempStartLocationUp)
     this.bottomPipe.setPosition(this.tempStartLocationDown)
+    // this.topPipe.setPosition(0,0,0);
+    // this.bottomPipe.setPosition(0,0,0);
+    // this.topPipe.setPosition(0,0,0);    
 }
 
     update(deltaTime: number) {
@@ -53,6 +56,9 @@ initPos(){
 
 this.tempStartLocationDown.x -= this.tempSpeed
 this.tempStartLocationUp.x -= this.tempSpeed
+
+this.bottomPipe.setPosition(this.tempStartLocationDown);
+this.topPipe.setPosition(this.tempStartLocationUp);
 
 if(this.isPass == false && this.topPipe.position.x <=0){
    this.isPass = true
@@ -67,7 +73,7 @@ if(this.topPipe.position.x < (0 - this.scene.width)){
 
     }
 
-    
+
 }
 
 

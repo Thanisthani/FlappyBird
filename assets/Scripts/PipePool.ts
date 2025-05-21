@@ -7,8 +7,6 @@ export class PipePool extends Component {
    @property({type: Prefab})
    public prefabPipes = null
 
-   @property({type: Node})
-   public pipePoolHome
 
    public pool = new NodePool()
 
@@ -20,13 +18,11 @@ let initCount = 3
 for(let i = 0; i < initCount; i++){
     this.createPipe = instantiate(this.prefabPipes)
     if(i==0){
-        this.pipePoolHome.addChild(this.createPipe)
+        this.node.addChild(this.createPipe)
     }else{
         this.pool.put(this.createPipe)
     }
    }
-   console.log("Instantiating pipe:", this.prefabPipes);
-console.log("Adding to:", this.pipePoolHome.name);
 
    }
 
@@ -38,11 +34,11 @@ if(this.pool.size() >0){
     this.createPipe = instantiate(this.prefabPipes)
 }
 
-this.pipePoolHome.addChild(this.createPipe)
+this.node.addChild(this.createPipe)
    }
 
    reset(){
-    this.pipePoolHome.removeAllChildren()
+    this.node.removeAllChildren()
     this.pool.clear()
     this.initPool()
    }
