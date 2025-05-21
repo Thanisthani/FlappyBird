@@ -22,7 +22,7 @@ public currentScore:number;
 
     updateScore(num:number){
         this.currentScore =num;
-        this.scoreLabel.string = this.currentScore.toString()
+        this.scoreLabel.string = "Score:"+this.currentScore.toString()
     }
 
     resetScore(){
